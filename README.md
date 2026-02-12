@@ -54,14 +54,31 @@ DEV_OVERVIEW.md + DIAGRAM.mermaid
 
 ## Setup
 
+### 1. Install the skills
+
 Clone this repo and symlink it so Claude Code discovers the skills from any repository:
 
 ```bash
 git clone https://github.com/mybites/ai-skills.git
-ln -s /path/to/this/repo ~/.claude/skills
+ln -s /path/to/ai-skills ~/.claude/skills
 ```
 
 Claude Code looks for skills in `~/.claude/skills`. The symlink makes them available globally — trigger any skill from any repo on your machine.
+
+### 2. Organize your projects
+
+For cross-repo skills (steps 3–6) to work, Claude Code needs access to all your service repos at once. The simplest way: keep all repos under a common parent directory and start Claude Code from there.
+
+```
+~/projects/          ← start Claude Code here
+├── api-gateway/
+├── order-service/
+├── inventory-service/
+├── payment-service/
+└── ...
+```
+
+Per-repo skills (steps 1–2) can run from inside any individual repo.
 
 ## Usage
 
