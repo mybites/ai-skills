@@ -2,7 +2,7 @@
 
 A set of [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skills that auto-generate layered documentation from source code across multiple repositories. Built for teams where knowledge lives in code but needs to reach developers, AI agents, and business stakeholders.
 
-📝 **Blog series**: [Part 1 — I Was Copy-Pasting Between Two AI Chats. Here's How I Fixed It.](https://medium.com/@leyb.work/i-was-copy-pasting-between-two-ai-chats-heres-how-i-fixed-it-0fa4c521b2a9>)
+📝 **Blog series**: [Part 1 — I Was Copy-Pasting Between Two AI Chats. Here's How I Fixed It.](https://medium.com/@leyb.work/i-was-copy-pasting-between-two-ai-chats-heres-how-i-fixed-it-0fa4c521b2a9)
 
 ## The Problem
 
@@ -37,14 +37,14 @@ DEV_OVERVIEW.md + DIAGRAM.mermaid
 
 ## Skills
 
-| # | Skill | Scope | What it does |
-|---|-------|-------|-------------|
-| 1 | `dev-overview-generator` | Per repo | Analyzes code → `DEV_OVERVIEW.md` + Mermaid diagram |
-| 2 | `service-integration-mapper` | Per repo | Transforms DEV_OVERVIEW → structured `{service}.yaml` |
-| 3 | `connections-builder` | Cross-repo | Stitches all service YAMLs → unified `_connections.yaml` |
-| 4 | `flow-diagram-generator` | Cross-repo | Generates Mermaid sequence diagrams from E2E flows |
-| 5 | `topology-generator` | Cross-repo | Generates high-level architecture map |
-| 6 | `ddd-flow-mapper` | Cross-repo | Translates technical flows → business-language documentation |
+| # | Skill | Scope | What it does | For Humans | For AI |
+|---|-------|-------|-------------|------------|--------|
+| 1 | `dev-overview-generator` | Per repo | Analyzes code → `DEV_OVERVIEW.md` + Mermaid diagram | ✅ Readable overview + visual diagram | ✅ Structured service summary |
+| 2 | `service-integration-mapper` | Per repo | Transforms DEV_OVERVIEW → structured `{service}.yaml` | | ✅ Machine-parseable produces/consumes |
+| 3 | `connections-builder` | Cross-repo | Stitches all service YAMLs → unified `_connections.yaml` | | ✅ Full cross-service dependency graph |
+| 4 | `flow-diagram-generator` | Cross-repo | Generates Mermaid sequence diagrams from E2E flows | ✅ Visual sequence diagrams | |
+| 5 | `topology-generator` | Cross-repo | Generates high-level architecture map | ✅ Architecture overview | ✅ YAML service definitions |
+| 6 | `ddd-flow-mapper` | Cross-repo | Translates technical flows → business-language documentation | ✅ Business-friendly flows | |
 
 ## Two Audiences, Two Formats
 
@@ -57,7 +57,7 @@ DEV_OVERVIEW.md + DIAGRAM.mermaid
 Clone this repo and symlink it so Claude Code discovers the skills from any repository:
 
 ```bash
-git clone <REPO_URL>
+git clone https://github.com/mybites/ai-skills.git
 ln -s /path/to/this/repo ~/.claude/skills
 ```
 
@@ -110,7 +110,7 @@ docs/
 
 ## Blog Series
 
-1. [Part 1 — The Problem & Approach](https://medium.com/<YOUR_MEDIUM_HANDLE>/<POST_SLUG>)
+1. [Part 1 — The Problem & Approach](https://medium.com/@leyb.work/i-was-copy-pasting-between-two-ai-chats-heres-how-i-fixed-it-0fa4c521b2a9)
 2. Part 2 — Per-Repo Skills (coming soon)
 3. Part 3 — Cross-Repo Skills (coming soon)
 
